@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Airstack GraphQL TA ">
+    <test name="TC_01">
+        <classes>
+            <class name="GraphQL"/>
+        </classes>
+    </test>
+</suite>
