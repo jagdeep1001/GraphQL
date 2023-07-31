@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<configuration debug="false" scanPeriod="60 seconds">
+
+	<contextName>Automation</contextName>
+
+	<property resource="logback.properties" />
+	<property resource="logback.local.properties" />
+
+	<jmxConfigurator />
+
+	<appender name="CONSOLE"
+		class="ch.qos.logback.core.ConsoleAppender">
+
+		<encoder>
+			<pattern>&lt;%date{yyyy-MM-dd HH:mm:ss}&gt; %-5level [%logger{32}]
+				%msg%n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>INFO</level>
+		</filter>
+	</appender>
+
+	<appender name="ADAPTER_FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>logs/application.log</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- rollover daily -->
+			<fileNamePattern>logs/application.log.%d{yyyy-MM-dd}.%i.log
+			</fileNamePattern>
+			<maxHistory>90</maxHistory><!-- 90 days -->
+			<cleanHistoryOnStart>false</cleanHistoryOnStart>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>5MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%date{yyMMdd HH:mm:ss} %-5level [%.32thread/%logger{32}]
+				%msg%n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+	</appender>
+
+	<logger name="com.automation" level="INFO" />
+
+	<root level="INFO">
+		<appender-ref ref="ADAPTER_FILE" />
+		<appender-ref ref="CONSOLE" />
+	</root>
+
+</configuration>

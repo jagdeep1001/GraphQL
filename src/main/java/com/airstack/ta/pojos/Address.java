@@ -1,13 +1,20 @@
 package com.airstack.ta.pojos;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+
 public class Address {
-    private String _eq;
+
+
+    @JsonProperty("_eq")
+    private String eq;
 
     public String getEq() {
-        return _eq;
+        return eq;
     }
 
-    public void setEq(String _eq) {
-        this._eq = _eq;
+    public void setEq(String eq) {
+        this.eq = eq;
     }
+
 }

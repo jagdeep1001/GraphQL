@@ -1,8 +1,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Airstack GraphQL TA ">
+<suite name="Airstack Tests.GraphQL TA ">
+<!--    <listeners>-->
+<!--        <listener class-name="com.airstack.ta.reporting.ExtentTestManager"></listener>-->
+<!--    </listeners>-->
     <test name="TC_01">
         <classes>
-            <class name="GraphQL"/>
+            <class name="Tests.GraphQL"/>
         </classes>
     </test>
 </suite>
