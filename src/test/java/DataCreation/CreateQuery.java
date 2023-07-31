@@ -1,6 +1,7 @@
 package DataCreation;
 
 import com.airstack.ta.pojos.*;
+import com.airstack.ta.pojos.QueryPojo.Token;
 import org.testng.annotations.DataProvider;
 
 import java.io.IOException;
@@ -10,6 +11,8 @@ import java.nio.file.Paths;
 
  public class CreateQuery {
     private static String Query;
+     private static String Token;
+
      public static void getQuery(){
         String filePath = "src/main/resources/queries/GraphQLQuery";
         try {
@@ -24,7 +27,7 @@ import java.nio.file.Paths;
 
     public static GraphqlQuery makeNewQuery(String eq){
 
-         getQuery();
+        getQuery();
 
         //Initializing all the pojos
         GraphqlQuery query = new GraphqlQuery();
@@ -35,6 +38,7 @@ import java.nio.file.Paths;
 
 
         //Setting Input Variables
+
         query.setQuery(Query);
         input.setBlockchain("ethereum");
         input.setLimit(10);

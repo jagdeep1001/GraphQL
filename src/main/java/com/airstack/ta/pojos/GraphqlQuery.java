@@ -22,4 +22,12 @@ public class GraphqlQuery {
     public void setVariables(Object variables) {
         this.variables = variables;
     }
+
+    @Override
+    public String toString() {
+        return "GraphqlQuery{" +
+                "query='" + query + '\'' +
+                ", variables=" + variables +
+                '}';
+    }
 }

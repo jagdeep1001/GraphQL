@@ -1,0 +1,291 @@
+<html>
+<head>
+<title>TestNG:  TC_01</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>TC_01</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>0/2/0</td>
+</tr><tr>
+<td>Started on:</td><td>Mon Jul 31 20:43:53 IST 2023</td>
+</tr>
+<tr><td>Total time:</td><td>4 seconds (4705 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Tests.GraphQL.BaseUrlTest()'><b>BaseUrlTest</b><br>Test class: Tests.GraphQL<br>Parameters: 0x60e4d786628fea6478f785a6d7e704777c86a7c6<br/>
+<a href="#Output-1237912220" onClick='toggleBox("Output-1237912220", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1237912220" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1237912220">
+Verified Successfully !!<br/>
+</div>
+</td>
+<td><div><pre>java.lang.RuntimeException: com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field &quot;data&quot; (class com.airstack.ta.pojos.QueryPojo.data), not marked as ignorable (0 known properties: ])
+ at [Source: (String)&quot;{&quot;data&quot;:{&quot;Tokens&quot;:{&quot;Token&quot;:[{&quot;id&quot;:&quot;10x60e4d786628fea6478f785a6d7e704777c86a7c6&quot;,&quot;address&quot;:&quot;0x60e4d786628fea6478f785a6d7e704777c86a7c6&quot;,&quot;chainId&quot;:&quot;1&quot;,&quot;name&quot;:&quot;MutantApeYachtClub&quot;,&quot;symbol&quot;:&quot;MAYC&quot;,&quot;type&quot;:&quot;ERC721&quot;,&quot;totalSupply&quot;:&quot;19480&quot;,&quot;decimals&quot;:0,&quot;baseURI&quot;:&quot;&quot;,&quot;lastTransferTimestamp&quot;:&quot;2023-07-31T15:10:47Z&quot;,&quot;lastTransferBlock&quot;:17813798,&quot;lastTransferHash&quot;:&quot;0xa98f60888408a5e9cad803317bd6a5bdc9a377e4c16da89bf7201aceca2aa475&quot;,&quot;contractMetaData&quot;:{&quot;description&quot;:null},&quot;logo&quot;:{&quot;medium&quot;:null,&quot;original&quot;:null},&quot;[truncated 631 chars]; line: 1, column: 10] (through reference chain: com.airstack.ta.pojos.QueryPojo.data[&quot;data&quot;])
+	at io.restassured.internal.path.json.mapping.JsonPathJackson2ObjectDeserializer.deserialize(JsonPathJackson2ObjectDeserializer.java:30)
+	at io.restassured.path.json.mapping.JsonPathObjectDeserializer$deserialize.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at io.restassured.internal.mapping.Jackson2Mapper.deserialize(Jackson2Mapper.groovy:58)
+	at io.restassured.mapper.ObjectMapper$deserialize$0.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at io.restassured.internal.mapping.ObjectMapping.parseWithJackson2(ObjectMapping.groovy:254)
+	at io.restassured.internal.mapping.ObjectMapping$parseWithJackson2$1.callStatic(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:53)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:217)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:240)
+	at io.restassured.internal.mapping.ObjectMapping.deserialize(ObjectMapping.groovy:56)
+	at io.restassured.internal.mapping.ObjectMapping$deserialize$0.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at io.restassured.internal.RestAssuredResponseOptionsGroovyImpl.as(RestAssuredResponseOptionsGroovyImpl.groovy:229)
+	at io.restassured.internal.RestAssuredResponseOptionsImpl.as(RestAssuredResponseOptionsImpl.java:169)
+	at Tests.GraphQL.BaseUrlTest(GraphQL.java:59)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+Caused by: com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field &quot;data&quot; (class com.airstack.ta.pojos.QueryPojo.data), not marked as ignorable (0 known properties: ])
+ at [Source: (String)&quot;{&quot;data&quot;:{&quot;Tokens&quot;:{&quot;Token&quot;:[{&quot;id&quot;:&quot;10x60e4d786628fea6478f785a6d7e704777c86a7c6&quot;,&quot;address&quot;:&quot;0x60e4d786628fea6478f785a6d7e704777c86a7c6&quot;,&quot;chainId&quot;:&quot;1&quot;,&quot;name&quot;:&quot;MutantApeYachtClub&quot;,&quot;symbol&quot;:&quot;MAYC&quot;,&quot;type&quot;:&quot;ERC721&quot;,&quot;totalSupply&quot;:&quot;19480&quot;,&quot;decimals&quot;:0,&quot;baseURI&quot;:&quot;&quot;,&quot;lastTransferTimestamp&quot;:&quot;2023-07-31T15:10:47Z&quot;,&quot;lastTransferBlock&quot;:17813798,&quot;lastTransferHash&quot;:&quot;0xa98f60888408a5e9cad803317bd6a5bdc9a377e4c16da89bf7201aceca2aa475&quot;,&quot;contractMetaData&quot;:{&quot;description&quot;:null},&quot;logo&quot;:{&quot;medium&quot;:null,&quot;original&quot;:null},&quot;[truncated 631 chars]; line: 1, column: 10] (through reference chain: com.airstack.ta.pojos.QueryPojo.data[&quot;data&quot;])
+	at com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException.from(UnrecognizedPropertyException.java:61)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnknownProperty(DeserializationContext.java:823)
+	at com.fasterxml.jackson.databind.deser.std.StdDeserializer.handleUnknownProperty(StdDeserializer.java:1153)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownProperty(BeanDeserializerBase.java:1589)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownVanilla(BeanDeserializerBase.java:1567)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:294)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:151)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4013)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3042)
+	at io.restassured.internal.path.json.mapping.JsonPathJackson2ObjectDeserializer.deserialize(JsonPathJackson2ObjectDeserializer.java:28)
+	... 48 more
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1237912220", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1237912220'><pre>java.lang.RuntimeException: com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field &quot;data&quot; (class com.airstack.ta.pojos.QueryPojo.data), not marked as ignorable (0 known properties: ])
+ at [Source: (String)&quot;{&quot;data&quot;:{&quot;Tokens&quot;:{&quot;Token&quot;:[{&quot;id&quot;:&quot;10x60e4d786628fea6478f785a6d7e704777c86a7c6&quot;,&quot;address&quot;:&quot;0x60e4d786628fea6478f785a6d7e704777c86a7c6&quot;,&quot;chainId&quot;:&quot;1&quot;,&quot;name&quot;:&quot;MutantApeYachtClub&quot;,&quot;symbol&quot;:&quot;MAYC&quot;,&quot;type&quot;:&quot;ERC721&quot;,&quot;totalSupply&quot;:&quot;19480&quot;,&quot;decimals&quot;:0,&quot;baseURI&quot;:&quot;&quot;,&quot;lastTransferTimestamp&quot;:&quot;2023-07-31T15:10:47Z&quot;,&quot;lastTransferBlock&quot;:17813798,&quot;lastTransferHash&quot;:&quot;0xa98f60888408a5e9cad803317bd6a5bdc9a377e4c16da89bf7201aceca2aa475&quot;,&quot;contractMetaData&quot;:{&quot;description&quot;:null},&quot;logo&quot;:{&quot;medium&quot;:null,&quot;original&quot;:null},&quot;[truncated 631 chars]; line: 1, column: 10] (through reference chain: com.airstack.ta.pojos.QueryPojo.data[&quot;data&quot;])
+	at io.restassured.internal.path.json.mapping.JsonPathJackson2ObjectDeserializer.deserialize(JsonPathJackson2ObjectDeserializer.java:30)
+	at io.restassured.path.json.mapping.JsonPathObjectDeserializer$deserialize.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at io.restassured.internal.mapping.Jackson2Mapper.deserialize(Jackson2Mapper.groovy:58)
+	at io.restassured.mapper.ObjectMapper$deserialize$0.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at io.restassured.internal.mapping.ObjectMapping.parseWithJackson2(ObjectMapping.groovy:254)
+	at io.restassured.internal.mapping.ObjectMapping$parseWithJackson2$1.callStatic(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:53)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:217)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:240)
+	at io.restassured.internal.mapping.ObjectMapping.deserialize(ObjectMapping.groovy:56)
+	at io.restassured.internal.mapping.ObjectMapping$deserialize$0.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at io.restassured.internal.RestAssuredResponseOptionsGroovyImpl.as(RestAssuredResponseOptionsGroovyImpl.groovy:229)
+	at io.restassured.internal.RestAssuredResponseOptionsImpl.as(RestAssuredResponseOptionsImpl.java:169)
+	at Tests.GraphQL.BaseUrlTest(GraphQL.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+Caused by: com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field &quot;data&quot; (class com.airstack.ta.pojos.QueryPojo.data), not marked as ignorable (0 known properties: ])
+ at [Source: (String)&quot;{&quot;data&quot;:{&quot;Tokens&quot;:{&quot;Token&quot;:[{&quot;id&quot;:&quot;10x60e4d786628fea6478f785a6d7e704777c86a7c6&quot;,&quot;address&quot;:&quot;0x60e4d786628fea6478f785a6d7e704777c86a7c6&quot;,&quot;chainId&quot;:&quot;1&quot;,&quot;name&quot;:&quot;MutantApeYachtClub&quot;,&quot;symbol&quot;:&quot;MAYC&quot;,&quot;type&quot;:&quot;ERC721&quot;,&quot;totalSupply&quot;:&quot;19480&quot;,&quot;decimals&quot;:0,&quot;baseURI&quot;:&quot;&quot;,&quot;lastTransferTimestamp&quot;:&quot;2023-07-31T15:10:47Z&quot;,&quot;lastTransferBlock&quot;:17813798,&quot;lastTransferHash&quot;:&quot;0xa98f60888408a5e9cad803317bd6a5bdc9a377e4c16da89bf7201aceca2aa475&quot;,&quot;contractMetaData&quot;:{&quot;description&quot;:null},&quot;logo&quot;:{&quot;medium&quot;:null,&quot;original&quot;:null},&quot;[truncated 631 chars]; line: 1, column: 10] (through reference chain: com.airstack.ta.pojos.QueryPojo.data[&quot;data&quot;])
+	at com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException.from(UnrecognizedPropertyException.java:61)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnknownProperty(DeserializationContext.java:823)
+	at com.fasterxml.jackson.databind.deser.std.StdDeserializer.handleUnknownProperty(StdDeserializer.java:1153)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownProperty(BeanDeserializerBase.java:1589)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownVanilla(BeanDeserializerBase.java:1567)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:294)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:151)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4013)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3042)
+	at io.restassured.internal.path.json.mapping.JsonPathJackson2ObjectDeserializer.deserialize(JsonPathJackson2ObjectDeserializer.java:28)
+	... 48 more
+</pre></div></td>
+<td>3</td>
+<td>Tests.GraphQL@f2f2cc1</td></tr>
+<tr>
+<td title='Tests.GraphQL.BaseUrlTest()'><b>BaseUrlTest</b><br>Test class: Tests.GraphQL<br>Parameters: 0xedf6d3c3664606fe9ee3a9796d5cc75e3b16e682<br/>
+<a href="#Output-1839182545" onClick='toggleBox("Output-1839182545", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1839182545" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1839182545">
+Verified Successfully !!<br/>
+</div>
+</td>
+<td><div><pre>java.lang.RuntimeException: com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field &quot;data&quot; (class com.airstack.ta.pojos.QueryPojo.data), not marked as ignorable (0 known properties: ])
+ at [Source: (String)&quot;{&quot;data&quot;:{&quot;Tokens&quot;:{&quot;Token&quot;:[{&quot;id&quot;:&quot;1edf6d3c3664606fe9ee3a9796d5cc75e3b16e682&quot;,&quot;address&quot;:&quot;0xedf6d3c3664606fe9ee3a9796d5cc75e3b16e682&quot;,&quot;chainId&quot;:&quot;1&quot;,&quot;name&quot;:&quot;FatCats&quot;,&quot;symbol&quot;:&quot;FCD&quot;,&quot;type&quot;:&quot;ERC721&quot;,&quot;totalSupply&quot;:&quot;5000&quot;,&quot;decimals&quot;:0,&quot;baseURI&quot;:&quot;&quot;,&quot;lastTransferTimestamp&quot;:&quot;2023-03-21T05:35:47Z&quot;,&quot;lastTransferBlock&quot;:16873972,&quot;lastTransferHash&quot;:&quot;0xa42fe34f983caa52522810c41066d0b45dcb64679f78db25e7810bd3bbb057c4&quot;,&quot;contractMetaData&quot;:{&quot;description&quot;:null},&quot;logo&quot;:{&quot;medium&quot;:null,&quot;original&quot;:null},&quot;tokenBalances&quot;&quot;[truncated 603 chars]; line: 1, column: 10] (through reference chain: com.airstack.ta.pojos.QueryPojo.data[&quot;data&quot;])
+	at io.restassured.internal.path.json.mapping.JsonPathJackson2ObjectDeserializer.deserialize(JsonPathJackson2ObjectDeserializer.java:30)
+	at io.restassured.path.json.mapping.JsonPathObjectDeserializer$deserialize.call(Unknown Source)
+	at io.restassured.internal.mapping.Jackson2Mapper.deserialize(Jackson2Mapper.groovy:58)
+	at io.restassured.mapper.ObjectMapper$deserialize$0.call(Unknown Source)
+	at io.restassured.internal.mapping.ObjectMapping.parseWithJackson2(ObjectMapping.groovy:254)
+	at io.restassured.internal.mapping.ObjectMapping$parseWithJackson2$1.callStatic(Unknown Source)
+	at io.restassured.internal.mapping.ObjectMapping.deserialize(ObjectMapping.groovy:56)
+	at io.restassured.internal.mapping.ObjectMapping$deserialize$0.call(Unknown Source)
+	at io.restassured.internal.RestAssuredResponseOptionsGroovyImpl.as(RestAssuredResponseOptionsGroovyImpl.groovy:229)
+	at io.restassured.internal.RestAssuredResponseOptionsImpl.as(RestAssuredResponseOptionsImpl.java:169)
+	at Tests.GraphQL.BaseUrlTest(GraphQL.java:59)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+Caused by: com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field &quot;data&quot; (class com.airstack.ta.pojos.QueryPojo.data), not marked as ignorable (0 known properties: ])
+ at [Source: (String)&quot;{&quot;data&quot;:{&quot;Tokens&quot;:{&quot;Token&quot;:[{&quot;id&quot;:&quot;1edf6d3c3664606fe9ee3a9796d5cc75e3b16e682&quot;,&quot;address&quot;:&quot;0xedf6d3c3664606fe9ee3a9796d5cc75e3b16e682&quot;,&quot;chainId&quot;:&quot;1&quot;,&quot;name&quot;:&quot;FatCats&quot;,&quot;symbol&quot;:&quot;FCD&quot;,&quot;type&quot;:&quot;ERC721&quot;,&quot;totalSupply&quot;:&quot;5000&quot;,&quot;decimals&quot;:0,&quot;baseURI&quot;:&quot;&quot;,&quot;lastTransferTimestamp&quot;:&quot;2023-03-21T05:35:47Z&quot;,&quot;lastTransferBlock&quot;:16873972,&quot;lastTransferHash&quot;:&quot;0xa42fe34f983caa52522810c41066d0b45dcb64679f78db25e7810bd3bbb057c4&quot;,&quot;contractMetaData&quot;:{&quot;description&quot;:null},&quot;logo&quot;:{&quot;medium&quot;:null,&quot;original&quot;:null},&quot;tokenBalances&quot;&quot;[truncated 603 chars]; line: 1, column: 10] (through reference chain: com.airstack.ta.pojos.QueryPojo.data[&quot;data&quot;])
+	at com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException.from(UnrecognizedPropertyException.java:61)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnknownProperty(DeserializationContext.java:823)
+	at com.fasterxml.jackson.databind.deser.std.StdDeserializer.handleUnknownProperty(StdDeserializer.java:1153)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownProperty(BeanDeserializerBase.java:1589)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownVanilla(BeanDeserializerBase.java:1567)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:294)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:151)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4013)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3042)
+	at io.restassured.internal.path.json.mapping.JsonPathJackson2ObjectDeserializer.deserialize(JsonPathJackson2ObjectDeserializer.java:28)
+	... 37 more
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1839182545", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1839182545'><pre>java.lang.RuntimeException: com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field &quot;data&quot; (class com.airstack.ta.pojos.QueryPojo.data), not marked as ignorable (0 known properties: ])
+ at [Source: (String)&quot;{&quot;data&quot;:{&quot;Tokens&quot;:{&quot;Token&quot;:[{&quot;id&quot;:&quot;1edf6d3c3664606fe9ee3a9796d5cc75e3b16e682&quot;,&quot;address&quot;:&quot;0xedf6d3c3664606fe9ee3a9796d5cc75e3b16e682&quot;,&quot;chainId&quot;:&quot;1&quot;,&quot;name&quot;:&quot;FatCats&quot;,&quot;symbol&quot;:&quot;FCD&quot;,&quot;type&quot;:&quot;ERC721&quot;,&quot;totalSupply&quot;:&quot;5000&quot;,&quot;decimals&quot;:0,&quot;baseURI&quot;:&quot;&quot;,&quot;lastTransferTimestamp&quot;:&quot;2023-03-21T05:35:47Z&quot;,&quot;lastTransferBlock&quot;:16873972,&quot;lastTransferHash&quot;:&quot;0xa42fe34f983caa52522810c41066d0b45dcb64679f78db25e7810bd3bbb057c4&quot;,&quot;contractMetaData&quot;:{&quot;description&quot;:null},&quot;logo&quot;:{&quot;medium&quot;:null,&quot;original&quot;:null},&quot;tokenBalances&quot;&quot;[truncated 603 chars]; line: 1, column: 10] (through reference chain: com.airstack.ta.pojos.QueryPojo.data[&quot;data&quot;])
+	at io.restassured.internal.path.json.mapping.JsonPathJackson2ObjectDeserializer.deserialize(JsonPathJackson2ObjectDeserializer.java:30)
+	at io.restassured.path.json.mapping.JsonPathObjectDeserializer$deserialize.call(Unknown Source)
+	at io.restassured.internal.mapping.Jackson2Mapper.deserialize(Jackson2Mapper.groovy:58)
+	at io.restassured.mapper.ObjectMapper$deserialize$0.call(Unknown Source)
+	at io.restassured.internal.mapping.ObjectMapping.parseWithJackson2(ObjectMapping.groovy:254)
+	at io.restassured.internal.mapping.ObjectMapping$parseWithJackson2$1.callStatic(Unknown Source)
+	at io.restassured.internal.mapping.ObjectMapping.deserialize(ObjectMapping.groovy:56)
+	at io.restassured.internal.mapping.ObjectMapping$deserialize$0.call(Unknown Source)
+	at io.restassured.internal.RestAssuredResponseOptionsGroovyImpl.as(RestAssuredResponseOptionsGroovyImpl.groovy:229)
+	at io.restassured.internal.RestAssuredResponseOptionsImpl.as(RestAssuredResponseOptionsImpl.java:169)
+	at Tests.GraphQL.BaseUrlTest(GraphQL.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+Caused by: com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field &quot;data&quot; (class com.airstack.ta.pojos.QueryPojo.data), not marked as ignorable (0 known properties: ])
+ at [Source: (String)&quot;{&quot;data&quot;:{&quot;Tokens&quot;:{&quot;Token&quot;:[{&quot;id&quot;:&quot;1edf6d3c3664606fe9ee3a9796d5cc75e3b16e682&quot;,&quot;address&quot;:&quot;0xedf6d3c3664606fe9ee3a9796d5cc75e3b16e682&quot;,&quot;chainId&quot;:&quot;1&quot;,&quot;name&quot;:&quot;FatCats&quot;,&quot;symbol&quot;:&quot;FCD&quot;,&quot;type&quot;:&quot;ERC721&quot;,&quot;totalSupply&quot;:&quot;5000&quot;,&quot;decimals&quot;:0,&quot;baseURI&quot;:&quot;&quot;,&quot;lastTransferTimestamp&quot;:&quot;2023-03-21T05:35:47Z&quot;,&quot;lastTransferBlock&quot;:16873972,&quot;lastTransferHash&quot;:&quot;0xa42fe34f983caa52522810c41066d0b45dcb64679f78db25e7810bd3bbb057c4&quot;,&quot;contractMetaData&quot;:{&quot;description&quot;:null},&quot;logo&quot;:{&quot;medium&quot;:null,&quot;original&quot;:null},&quot;tokenBalances&quot;&quot;[truncated 603 chars]; line: 1, column: 10] (through reference chain: com.airstack.ta.pojos.QueryPojo.data[&quot;data&quot;])
+	at com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException.from(UnrecognizedPropertyException.java:61)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnknownProperty(DeserializationContext.java:823)
+	at com.fasterxml.jackson.databind.deser.std.StdDeserializer.handleUnknownProperty(StdDeserializer.java:1153)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownProperty(BeanDeserializerBase.java:1589)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownVanilla(BeanDeserializerBase.java:1567)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:294)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:151)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4013)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3042)
+	at io.restassured.internal.path.json.mapping.JsonPathJackson2ObjectDeserializer.deserialize(JsonPathJackson2ObjectDeserializer.java:28)
+	... 37 more
+</pre></div></td>
+<td>1</td>
+<td>Tests.GraphQL@f2f2cc1</td></tr>
+</table><p>
+</body>
+</html>

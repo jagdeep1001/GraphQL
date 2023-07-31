@@ -1,6 +1,10 @@
 package Tests;
 
+import com.sun.org.apache.bcel.internal.generic.LOOKUPSWITCH;
 import io.restassured.RestAssured;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
 import java.io.FileInputStream;
@@ -12,9 +16,10 @@ import java.util.Properties;
 
 public class BaseTest {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(BaseTest.class);
     @BeforeSuite
     public void setUp() {
-        System.out.println("Starting Testss !!");
+        LOGGER.info("Starting Testss !!");
         Properties properties = new Properties();
         try {
             // Loading the properties file using FileInputStream
@@ -23,12 +28,17 @@ public class BaseTest {
 
 
             String baseUrl = properties.getProperty("baseURI");
-            System.out.println("Setting Base URL as " + baseUrl);
+            LOGGER.info("Setting Base URL as " + baseUrl);
             RestAssured.baseURI=baseUrl;
 
         } catch (IOException e) {
+            LOGGER.error("***********Exception Occurred***************");
             e.printStackTrace();
         }
+    }
+    @AfterSuite
+    public void tearDown(){
+        LOGGER.info("Shutting Down the Tests !!");
     }
 
 }

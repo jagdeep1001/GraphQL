@@ -2,14 +2,24 @@ package Tests;
 
 import DataCreation.CreateQuery;
 import com.airstack.ta.pojos.*;
+import com.airstack.ta.pojos.QueryPojo.Token;
+import com.airstack.ta.pojos.QueryPojo.data;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import io.qameta.allure.*;
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.*;
+
 import java.io.IOException;
+
 import static org.testng.Reporter.log;
 
 
@@ -17,6 +27,7 @@ import static org.testng.Reporter.log;
 class GraphQL extends BaseTest {
 
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(GraphQL.class);
 
     @DataProvider(name="AddressEQ")
     public Object[][] getAddressEq(){
@@ -29,16 +40,20 @@ class GraphQL extends BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Description("Airstack GQL API")
     @Step("Airstack GQL API")
-    public void BaseUrlTest(String eq)  {
+    public void BaseUrlTest(String eq) throws IOException {
+
         GraphqlQuery query = CreateQuery.makeNewQuery(eq);
-      Response response = (Response) RestAssured.given().log().all().contentType(ContentType.JSON)
-                        .body(query).filter(new AllureRestAssured())
-                .post("/gql");
+        LOGGER.info("Setting Query as "+ query);
 
         //Assertions
+        Response response = (Response) RestAssured.given().log().all().contentType(ContentType.JSON)
+                .body(query).filter(new AllureRestAssured())
+                .post("/gql");
         Assert.assertEquals(response.getStatusCode(), 200);
         log("Verified Successfully !!");
+
     }
+
 
 
 }
