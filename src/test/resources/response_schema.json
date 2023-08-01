@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "Tokens": {
+          "type": "object",
+          "properties": {
+            "Token": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {"type": "string"},
+                  "address": {"type": "string"},
+                  "chainId": {"type": "string"},
+                  "name": {"type": "string"},
+                  "symbol": {"type": "string"},
+                  "type": {"type": "string"},
+                  "totalSupply": {"type": "string"},
+                  "decimals": {"type": "integer"},
+                  "baseURI": {"type": "string"},
+                  "lastTransferTimestamp": {"type": "string"},
+                  "lastTransferBlock": {"type": "integer"},
+                  "lastTransferHash": {"type": "string"},
+                  "contractMetaData": {
+                    "type": "object",
+                    "properties": {
+                      "description": {"type": "null"}
+                    },
+                    "required": ["description"]
+                  },
+                  "logo": {
+                    "type": "object",
+                    "properties": {
+                      "medium": {"type": "null"},
+                      "original": {"type": "null"}
+                    },
+                    "required": ["medium", "original"]
+                  },
+                  "tokenBalances": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "tokenId": {"type": "string"},
+                        "amount": {"type": "string"},
+                        "blockchain": {"type": "string"}
+                      },
+                      "required": ["tokenId", "amount", "blockchain"]
+                    }
+                  }
+                },
+                "required": [
+                  "id", "address", "chainId", "name", "symbol", "type", "totalSupply", "decimals",
+                  "baseURI", "lastTransferTimestamp", "lastTransferBlock", "lastTransferHash",
+                  "contractMetaData", "logo", "tokenBalances"
+                ]
+              }
+            },
+            "pageInfo": {
+              "type": "object",
+              "properties": {
+                "prevCursor": {"type": "string"},
+                "nextCursor": {"type": "string"}
+              }
+            }
+          },
+          "required": ["Token", "pageInfo"]
+        }
+      },
+      "required": ["Tokens"]
+    }
+  },
+  "required": ["data"]
+}
